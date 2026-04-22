@@ -102,6 +102,14 @@ section{padding:7rem 0}
 .svc-card p{font-size:.87rem;line-height:1.75;color:var(--muted)}
 .svc-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.3rem;font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:gap .2s}
 .svc-link:hover{gap:.7rem}
+.svc-modal-overlay{display:none;position:fixed;inset:0;z-index:1100;background:rgba(13,34,25,.75);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:1.5rem}
+.svc-modal-overlay.open{display:flex}
+.svc-modal{background:var(--cream);border-radius:4px;width:100%;max-width:580px;max-height:90vh;overflow-y:auto;padding:2.8rem 2.8rem 2.4rem;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.35)}
+.svc-modal-close{position:absolute;top:1.1rem;right:1.2rem;background:none;border:none;cursor:pointer;font-size:1.3rem;color:var(--muted);line-height:1;padding:.2rem .4rem;transition:color .2s}
+.svc-modal-close:hover{color:var(--forest)}
+.svc-modal-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.svc-modal-title{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--forest);margin-bottom:.5rem;line-height:1.2}
+.svc-modal-sub{font-size:.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.6rem;padding-bottom:1.4rem;border-bottom:1px solid var(--cream-dk)}
 
 /* ── PILLARS ── */
 #pillars{background:var(--white)}
@@ -248,6 +256,7 @@ footer a{color:var(--gold);text-decoration:none}
   .outcomes-cards{grid-template-columns:1fr}
   .hero-stats{flex-direction:column;gap:1rem}
   .ob-metrics{flex-wrap:wrap;gap:1rem}
+  .svc-modal{padding:2rem 1.4rem 1.8rem}
 }
 </style>
 </head>
@@ -260,12 +269,12 @@ footer a{color:var(--gold);text-decoration:none}
     <li><a href="#about">About</a></li>
     <li><a href="#framework">Framework</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#book">book</a></li>
+    <li><a href="#book">Book</a></li>
     <li><a href="#products">Products</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#connect">Connect</a></li>
   </ul>
-  <a href="https://calendly.com/rudybaileyjr/15-minute-clarity-call" target="_blank" class="nav-cta">Book a FREE 15-Minute Clarity Call</a>
+  <a href="https://calendly.com/rudybaileyjr/15-minute-clarity-call" target="_blank" class="nav-cta">BOOK A FREE CLARITY CALL</a>
 </nav>
 
 <!-- ══ HERO ══ -->
@@ -277,8 +286,8 @@ footer a{color:var(--gold);text-decoration:none}
     <h1>Stop Drifting.<em>Start Leading.</em></h1>
     <p class="hero-sub">Most leaders aren't failing because they lack knowledge. They're failing because they're delivering leadership from a state of chronic depletion. The 60-Minute Weekly Reset changes everything.</p>
     <div class="hero-btns">
-      <a href="https://calendly.com/rudybaileyjr/30min" target="_blank" class="btn-gold">Book a Free Clarity Call</a>
-      <a href="#about" class="btn-outline">Learn My Story</a>
+      <a href="https://calendly.com/rudybaileyjr/15-minute-clarity-call" target="_blank" class="btn-gold">BOOK A FREE CLARITY CALL</a>
+      <a href="https://thrive2day.my.canva.site/drift" target="_blank" class="btn-outline">TAKE THE LEADERSHIP DRIFT ASSESSMENT</a>
     </div>
     <div class="hero-stats">
       <div><div class="hs-num">20+</div><div class="hs-lbl">Yrs Experience</div></div>
@@ -332,13 +341,12 @@ footer a{color:var(--gold);text-decoration:none}
           <div class="cred"><div class="cred-dot"></div><span class="cred-txt">Prosci-Certified Change Management Practitioner</span></div>
           <div class="cred"><div class="cred-dot"></div><span class="cred-txt">Leadership Development Strategist &amp; Keynote Speaker</span></div>
         </div>
-        <a href="https://calendly.com/rudybaileyjr/30min" target="_blank" class="btn-gold" style="background:var(--forest);border-color:var(--forest)">Book a Free Clarity Call</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SERVICES ══ -->
+<!-- SERVICES START -->
 <section id="services">
   <div class="container">
     <div class="svc-intro fade-up">
@@ -353,49 +361,50 @@ footer a{color:var(--gold);text-decoration:none}
         <div class="svc-dur">45–90 Minutes</div>
         <h3>Executive Keynote</h3>
         <p>A high-energy, research-backed keynote for leadership conferences and corporate events. Rudy delivers the 60-Minute Leader™ framework with compelling storytelling and immediate, actionable takeaways.</p>
-        <a href="https://calendly.com/rudybaileyjr/30min" target="_blank" class="svc-link">Book Rudy →</a>
+        <a href="#" class="svc-link" onclick="openSvcModal();return false;">Book Rudy →</a>
       </div>
       <div class="svc-card fade-up">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <div class="svc-dur">3–4 Hours</div>
         <h3>Half-Day Workshop</h3>
         <p>Interactive leadership development where participants learn the full framework, complete their first reset, and leave with a personalized practice they can begin the very next day.</p>
-        <a href="https://calendly.com/rudybaileyjr/30min" target="_blank" class="svc-link">Get Started →</a>
+        <a href="#" class="svc-link" onclick="openSvcModal();return false;">Get Started →</a>
       </div>
       <div class="svc-card fade-up">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <div class="svc-dur">6–8 Hours</div>
         <h3>Full-Day Leadership Retreat</h3>
         <p>A comprehensive experience for senior leadership teams — deep-dive framework work, team alignment sessions, drift assessment, and a 90-day implementation roadmap.</p>
-        <a href="https://calendly.com/rudybaileyjr/30min" target="_blank" class="svc-link">Plan a Retreat →</a>
+        <a href="#" class="svc-link" onclick="openSvcModal();return false;">Plan a Retreat →</a>
       </div>
       <div class="svc-card fade-up">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="svc-dur">Multi-Session</div>
         <h3>Corporate Training Program</h3>
         <p>An ongoing leadership curriculum in 4-, 8-, or 12-session formats — for organizations building sustainable leadership capacity at scale, with virtual options available.</p>
-        <a href="https://calendly.com/rudybaileyjr/30min" target="_blank" class="svc-link">Explore Programs →</a>
+        <a href="programs.html" class="svc-link">Explore Programs →</a>
       </div>
       <div class="svc-card fade-up">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
         <div class="svc-dur">1-on-1</div>
         <h3>Leadership Coaching</h3>
         <p>Personalized coaching sessions built around the Six Reset Pillars™. For leaders who want dedicated, expert support as they rebuild their margin and lead at their best.</p>
-        <a href="https://calendly.com/rudybaileyjr/30min" target="_blank" class="svc-link">Book a Session →</a>
+        <a href="https://calendly.com/rudy-thrive2dayleadership/30min" target="_blank" class="svc-link">Book a Free Leadership Strategy Call →</a>
       </div>
       <div class="svc-card fade-up">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
         <div class="svc-dur">Self-Paced</div>
         <h3>Online Courses &amp; Resources</h3>
         <p>Digital learning resources built for busy professionals — workbooks, guides, and tools you can use immediately to reset, refocus, and lead well again on your schedule.</p>
-        <a href="https://stan.store/thrive2day" target="_blank" class="svc-link">Browse Resources →</a>
+        <a href="https://stan.store/THRIVE2DAY/p/ask-rudy" target="_blank" class="svc-link">Browse Resources →</a>
       </div>
     </div>
   </div>
 </section>
+<!-- SERVICES END -->
 
 <!-- ══ SIX PILLARS ══ -->
-<section id="pillars">
+<section id="framework">
   <div class="container">
     <div class="pil-header fade-up">
       <div class="sec-lbl" style="justify-content:center">The Framework</div>
@@ -423,7 +432,7 @@ footer a{color:var(--gold);text-decoration:none}
         <div class="ob-metric"><div class="ob-big">↓</div><div class="ob-lbl">Burnout Risk</div></div>
         <div class="ob-metric"><div class="ob-big">∞</div><div class="ob-lbl">Sustainable Impact</div></div>
       </div>
-      <a href="https://calendly.com/rudybaileyjr/30min" target="_blank" class="btn-gold">Start Your Reset →</a>
+      <a href="https://thrive2day.my.canva.site/drift" target="_blank" class="btn-gold">READY TO RESET? TAKE THE LEADERSHIP DRIFT ASSESSMENT</a>
     </div>
 
     <!-- OUTCOME CARDS -->
@@ -472,9 +481,9 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="prod-grid">
       <div class="prod-card fade-up">
         <div class="prod-tag">Free Download</div>
-        <h3>The 60-Minute Leader™ Preview Chapter</h3>
-        <p>Get a free first look at the framework — including the five stages of Leadership Drift and what it costs your team. Discover why the reset is the most important hour a leader can spend. This is where it begins.</p>
-        <a href="https://stan.store/thrive2day" target="_blank" class="prod-link">Download Free →</a>
+        <h3>The 60-Second Leader™</h3>
+        <p>The 60-Second Leader™ is your in-the-moment playbook for handling real-life leadership situations—one response at a time. Built as a practical extension of the 60-Minute Leader™ Framework, this tool helps you lead with clarity in the moments that matter most. Because leadership doesn’t happen in big speeches… it happens in 60-second windows.</p>
+        <a href="https://stan.store/THRIVE2DAY/p/the-60minute-leader-transformation-guide" target="_blank" class="prod-link">Download Free →</a>
       </div>
       <div class="prod-card fade-up">
         <div class="prod-tag">Full Library</div>
@@ -485,7 +494,7 @@ footer a{color:var(--gold);text-decoration:none}
     </div>
     <div class="prod-cta fade-up">
       <p>Visit the full THRIVE2DAY Store for all available resources and digital products.</p>
-      <a href="https://stan.store/thrive2day" target="_blank" class="btn-gold">Visit the THRIVE2DAY Store →</a>
+      <a href="https://stan.store/THRIVE2DAY/p/ask-rudy" target="_blank" class="btn-gold">Visit the THRIVE2DAY Store →</a>
     </div>
   </div>
 </section>
@@ -530,7 +539,7 @@ footer a{color:var(--gold);text-decoration:none}
           <button type="button" onclick="this.textContent='✓ You\'re on the list!';this.style.background='var(--forest-mid)'">Notify Me</button>
         </div>
         <p class="notify-note">📖 No spam, ever. Just your launch notification.</p>
-        <a href="https://stan.store/thrive2day" target="_blank" class="prev-link">📄 Download the Free Preview Chapter →</a>
+        <a href="https://stan.store/THRIVE2DAY/p/the-60minute-leader-free-chapter-download" target="_blank" class="prev-link">📄 Download the Free Preview Chapter →</a>
       </div>
     </div>
   </div>
@@ -586,11 +595,11 @@ footer a{color:var(--gold);text-decoration:none}
         <div class="sec-lbl" style="color:var(--gold-lt)">Let's Connect</div>
         <h2 class="sec-h2" style="color:var(--white)">Ready to Reset and<br><em style="color:var(--gold-lt)">Lead Well Again?</em></h2>
         <div class="divider"></div>
-        <p>Whether you're ready to book a workshop, explore coaching, inquire about a speaking engagement, or simply want to start a conversation — the first step is a free 30-minute clarity call. Let's talk about your leadership.</p>
+        <p>Whether you're ready to book a workshop, explore coaching, inquire about a speaking engagement, or simply want to start a conversation — the first step is a free clarity call. Let's talk about your leadership.</p>
         <div class="channels">
-          <a href="https://calendly.com/rudybaileyjr/30min" target="_blank" class="channel">
+          <a href="https://calendly.com/rudybaileyjr/15-minute-clarity-call" target="_blank" class="channel">
             <div class="ch-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-            <div><div class="ch-lbl">Book a Free 30-Min Clarity Call</div><div class="ch-sub">Schedule your free session</div></div>
+            <div><div class="ch-lbl">Book a FREE Clarity Call</div><div class="ch-sub">Schedule your free session</div></div>
           </a>
           <a href="mailto:rudy@thrive2dayleadership.com" class="channel">
             <div class="ch-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
@@ -607,29 +616,8 @@ footer a{color:var(--gold);text-decoration:none}
         </div>
       </div>
       <div class="fade-up">
-        <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you! Rudy will be in touch within 24 hours.')">
-          <div class="form-row">
-            <div class="fg"><label>First Name</label><input type="text" placeholder="Jane"></div>
-            <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div>
-          </div>
-          <div class="fg"><label>Email Address</label><input type="email" placeholder="jane@yourcompany.com"></div>
-          <div class="fg">
-            <label>I'm Interested In</label>
-            <select style="appearance:none;color:rgba(255,255,255,.7)">
-              <option value="">Select a service...</option>
-              <option>Executive Keynote</option>
-              <option>Half-Day Workshop</option>
-              <option>Full-Day Leadership Retreat</option>
-              <option>Corporate Training Program</option>
-              <option>1-on-1 Leadership Coaching</option>
-              <option>Book Pre-Notification</option>
-              <option>Digital Products</option>
-              <option>Something Else</option>
-            </select>
-          </div>
-          <div class="fg"><label>Message</label><textarea rows="4" placeholder="Tell me a bit about yourself and what you're looking for..."></textarea></div>
-          <button type="submit" class="form-btn">Send My Message →</button>
-        </form>
+        <div class="_form_3"></div>
+        <script src="https://rudybailey202066167.activehosted.com/f/embed.php?id=3" charset="utf-8"></script>
       </div>
     </div>
     <div class="conn-divider"></div>
@@ -657,6 +645,17 @@ footer a{color:var(--gold);text-decoration:none}
   The 60-Minute Leader™ · The Leadership Reset™ · The Six Reset Pillars™ are trademarks of Rudy Bailey.</p>
 </footer>
 
+<div class="svc-modal-overlay" id="svcModal" onclick="if(event.target===this)closeSvcModal()">
+  <div class="svc-modal" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle">
+    <button class="svc-modal-close" onclick="closeSvcModal()" aria-label="Close">✕</button>
+    <div class="svc-modal-eyebrow">THRIVE2DAY Leadership Lab</div>
+    <div class="svc-modal-title" id="svcModalTitle">Request More Information</div>
+    <p class="svc-modal-sub">Fill out the form below and Rudy will be in touch to discuss the right experience for your organization.</p>
+    <div class="_form_3"></div>
+    <script src="https://rudybailey202066167.activehosted.com/f/embed.php?id=3" charset="utf-8"></script>
+  </div>
+</div>
+
 <script>
   // Nav scroll effect
   const nav = document.getElementById('mainNav');
@@ -682,6 +681,20 @@ footer a{color:var(--gold);text-decoration:none}
   } else {
     fadeItems.forEach((item) => item.classList.add('in'));
   }
+
+  function openSvcModal() {
+    document.getElementById('svcModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSvcModal() {
+    document.getElementById('svcModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeSvcModal();
+  });
 </script>
 </body>
 </html>
