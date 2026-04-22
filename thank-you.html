@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Thrive2day Leadership</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1b3a2f;--forest-mid:#2a5c48;--gold:#c9973a;--gold-lt:#e2b96a;
+  --cream:#faf6ef;--cream-dk:#f0e9db;--ink:#1a1a1a;--muted:#6b7168;--white:#fff;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(27,58,47,.97);box-shadow:0 2px 24px rgba(0,0,0,.25)}
+.nav-logo{font-family:var(--serif);font-weight:600;font-size:1.25rem;color:var(--white);text-decoration:none;letter-spacing:.03em}
+.nav-logo span{color:var(--gold-lt)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold-lt)}
+.nav-cta{background:var(--gold);color:var(--white);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.55rem 1.4rem;border-radius:2px;transition:background .25s}
+.nav-cta:hover{background:var(--gold-lt)}
+main{min-height:100vh;background:var(--forest);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:8rem 2rem 4rem}
+.hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 70% 30%,rgba(201,151,58,.13) 0%,transparent 60%),radial-gradient(circle at 15% 80%,rgba(201,151,58,.08) 0%,transparent 50%)}
+.hero-grid-bg{position:absolute;inset:0;pointer-events:none;opacity:.05;background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,.8) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.8) 80px)}
+.thank-card{position:relative;z-index:2;max-width:880px;width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:4rem 3.5rem;box-shadow:0 24px 64px rgba(0,0,0,.2)}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:1.3rem}
+.eyebrow::before{content:'';width:30px;height:1px;background:var(--gold)}
+h1{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.8rem);font-weight:600;line-height:1.08;color:var(--white);margin-bottom:1.4rem}
+h1 em{display:block;font-style:italic;color:var(--gold-lt)}
+.lead{font-size:1rem;line-height:1.9;color:rgba(255,255,255,.74);max-width:680px;margin-bottom:2rem}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2.5rem 0}
+.info-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:1.3rem 1.2rem}
+.info-label{font-size:.67rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:.55rem}
+.info-text{font-size:.9rem;line-height:1.7;color:rgba(255,255,255,.72)}
+.actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.btn-gold{background:var(--gold);color:var(--white);padding:.95rem 2rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:2px solid var(--gold);display:inline-block;transition:background .25s,color .25s,transform .2s}
+.btn-gold:hover{background:transparent;color:var(--gold-lt);transform:translateY(-2px)}
+.btn-outline{border:2px solid rgba(255,255,255,.35);color:rgba(255,255,255,.85);padding:.95rem 2rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-radius:2px;background:transparent;display:inline-block;transition:border-color .25s,color .25s,transform .2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold-lt);transform:translateY(-2px)}
+.note{margin-top:2rem;font-size:.82rem;line-height:1.8;color:rgba(255,255,255,.5)}
+footer{background:#0d2219;padding:2rem 0;text-align:center}
+footer p{font-size:.76rem;color:rgba(255,255,255,.28);letter-spacing:.05em;line-height:2}
+footer a{color:var(--gold);text-decoration:none}
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .thank-card{padding:3rem 1.5rem}
+  .info-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Thrive<span>2day</span> Leadership</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#framework">Framework</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#book">Book</a></li>
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="index.html#testimonials">Testimonials</a></li>
+    <li><a href="index.html#connect">Connect</a></li>
+  </ul>
+  <a href="https://thrive2day.my.canva.site/drift" target="_blank" class="nav-cta">Take the Assessment</a>
+</nav>
+
+<main>
+  <div class="hero-glow"></div>
+  <div class="hero-grid-bg"></div>
+  <section class="thank-card">
+    <div class="eyebrow">Thank You</div>
+    <h1>Your Request Is In.<em>We’ll Be In Touch Soon.</em></h1>
+    <p class="lead">Thank you for reaching out to THRIVE2DAY Leadership Lab. Your form has been submitted successfully, and Rudy will review your request and follow up with next steps as soon as possible.</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">What Happens Next</div>
+        <p class="info-text">Your submission has been received and will be reviewed for fit, timing, and the best next conversation.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-label">Response Window</div>
+        <p class="info-text">Expect a follow-up by email soon with next steps, scheduling options, or any clarifying questions.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-label">In the Meantime</div>
+        <p class="info-text">You can explore the leadership assessment or return to the site to review services, products, and the framework.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="index.html" class="btn-gold">Return to the Site</a>
+      <a href="https://thrive2day.my.canva.site/drift" target="_blank" class="btn-outline">Take the Leadership Drift Assessment</a>
+    </div>
+
+    <p class="note">If your request is time-sensitive, you can also reach out directly via the contact options on the main site.</p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 THRIVE2DAY Leadership Lab &nbsp;·&nbsp; <a href="mailto:rudy@thrive2dayleadership.com">rudy@thrive2dayleadership.com</a> &nbsp;·&nbsp; Naples, FL<br>
+  The 60-Minute Leader™ · The Leadership Reset™ · The Six Reset Pillars™ are trademarks of Rudy Bailey.</p>
+</footer>
+
+</body>
+</html>

@@ -111,6 +111,32 @@ section{padding:7rem 0}
 .svc-modal-title{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--forest);margin-bottom:.5rem;line-height:1.2}
 .svc-modal-sub{font-size:.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.6rem;padding-bottom:1.4rem;border-bottom:1px solid var(--cream-dk)}
 
+/* ── PROGRAMS ── */
+#programs{background:var(--cream-dk)}
+.prog-intro{text-align:center;max-width:720px;margin:0 auto 4rem}
+.prog-stack{display:flex;flex-direction:column;gap:2rem}
+.prog-card{background:var(--white);border-radius:4px;padding:3rem 3.2rem;border-left:4px solid var(--gold);transition:box-shadow .3s,transform .3s}
+.prog-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.09);transform:translateY(-3px)}
+.prog-tag{font-size:.67rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);background:rgba(201,151,58,.1);padding:.25rem .6rem;border-radius:2px;display:inline-block;margin-bottom:1rem}
+.prog-card h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2rem);font-weight:600;color:var(--forest);line-height:1.2;margin-bottom:.5rem}
+.prog-card .prog-tagline{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold);margin-bottom:1.2rem}
+.prog-card p{font-size:.92rem;line-height:1.8;color:#444;margin-bottom:1.1rem}
+.prog-card p:last-of-type{margin-bottom:0}
+.prog-section-lbl{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:1.6rem;margin-bottom:.7rem}
+.prog-list{display:flex;flex-direction:column;gap:.5rem}
+.prog-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:#444;line-height:1.55;list-style:none}
+.prog-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.42rem}
+.prog-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 3rem;margin-top:.5rem}
+.prog-cta{background:var(--forest);border-radius:4px;padding:4.5rem 3.5rem;text-align:center;position:relative;overflow:hidden;margin-top:3rem}
+.prog-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,rgba(201,151,58,.1) 0%,transparent 65%);pointer-events:none}
+.prog-cta-inner{position:relative;z-index:1}
+.prog-cta h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:600;color:var(--white);line-height:1.15;margin-bottom:1rem}
+.prog-cta p{font-size:.97rem;line-height:1.8;color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 2.5rem}
+.prog-cta-btns{display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.prog-cta-email{font-size:.85rem;color:rgba(255,255,255,.5)}
+.prog-cta-email a{color:var(--gold-lt);text-decoration:none;transition:color .2s}
+.prog-cta-email a:hover{color:var(--white)}
+
 /* ── PILLARS ── */
 #pillars{background:var(--white)}
 .pil-header{text-align:center;max-width:580px;margin:0 auto 4rem}
@@ -250,6 +276,8 @@ footer a{color:var(--gold);text-decoration:none}
   .test-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   section{padding:5rem 0}
+  .prog-card{padding:2.2rem 1.8rem}
+  .prog-cta{padding:3.5rem 1.8rem}
 }
 @media(max-width:600px){
   .pil-grid{grid-template-columns:repeat(2,1fr)}
@@ -257,6 +285,7 @@ footer a{color:var(--gold);text-decoration:none}
   .hero-stats{flex-direction:column;gap:1rem}
   .ob-metrics{flex-wrap:wrap;gap:1rem}
   .svc-modal{padding:2rem 1.4rem 1.8rem}
+  .prog-cols{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -381,7 +410,7 @@ footer a{color:var(--gold);text-decoration:none}
         <div class="svc-dur">Multi-Session</div>
         <h3>Corporate Training Program</h3>
         <p>An ongoing leadership curriculum in 4-, 8-, or 12-session formats — for organizations building sustainable leadership capacity at scale, with virtual options available.</p>
-        <a href="programs.html" class="svc-link">Explore Programs →</a>
+        <a href="#programs" class="svc-link">Explore Programs →</a>
       </div>
       <div class="svc-card fade-up">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
@@ -401,6 +430,106 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 <!-- SERVICES END -->
+
+<!-- ══ PROGRAMS ══ -->
+<section id="programs">
+  <div class="container">
+    <div class="prog-intro fade-up">
+      <div class="sec-lbl" style="justify-content:center">Corporate Training Programs</div>
+      <h2 class="sec-h2" style="text-align:center">Explore <em>Programs</em></h2>
+      <div class="divider" style="margin:1.5rem auto 2rem"></div>
+      <p class="body-p" style="margin-bottom:0">Strengthen connection, elevate collaboration, and unlock performance with training experiences designed to meet your organization where it is and move it forward.</p>
+    </div>
+
+    <div class="prog-stack">
+      <div class="prog-card fade-up">
+        <div class="prog-tag">Team Experience</div>
+        <h2>Corporate Team Building Experiences</h2>
+        <p>Transform your teams from groups of individuals into aligned, high-functioning units. These sessions are designed to break down silos, improve communication, and build trust that translates directly into results.</p>
+        <div class="prog-section-lbl">Outcomes</div>
+        <ul class="prog-list">
+          <li>Stronger team cohesion and trust</li>
+          <li>Improved communication across roles</li>
+          <li>Increased collaboration and accountability</li>
+          <li>Energized, aligned teams ready to execute</li>
+        </ul>
+      </div>
+
+      <div class="prog-card fade-up">
+        <div class="prog-tag">Signature Program</div>
+        <h2>The Power of You™</h2>
+        <p class="prog-tagline">Employee Morale &amp; Engagement Transformation Training</p>
+        <p>A signature THRIVE2DAY experience built on the 8 Principles of Personal Leadership &amp; Engagement — designed to reignite ownership, purpose, and energy across your workforce.</p>
+        <div class="prog-section-lbl">Perfect for organizations experiencing</div>
+        <ul class="prog-list" style="margin-bottom:1.4rem">
+          <li>Low morale or disengagement</li>
+          <li>Burnout and lack of ownership</li>
+          <li>Culture drift or misalignment</li>
+        </ul>
+        <div class="prog-section-lbl">Outcomes</div>
+        <ul class="prog-list">
+          <li>Re-engaged employees who take initiative</li>
+          <li>Increased personal accountability at every level</li>
+          <li>Stronger workplace culture rooted in ownership</li>
+          <li>Renewed sense of purpose and contribution</li>
+        </ul>
+      </div>
+
+      <div class="prog-card fade-up">
+        <div class="prog-tag">Conflict Resolution</div>
+        <h2>PIVOT™: Conflict to Collaboration Training</h2>
+        <p class="prog-tagline">Turn Tension into Teamwork. Resolve Conflict the Right Way.</p>
+        <p>Equip your teams with five proven strategies to navigate conflict, communicate effectively, and build deeper collaboration. This training transforms how your organization handles friction — turning it into forward momentum.</p>
+        <div class="prog-section-lbl">Outcomes</div>
+        <ul class="prog-list">
+          <li>Healthier, more productive conflict resolution</li>
+          <li>Stronger interpersonal communication</li>
+          <li>Increased trust and psychological safety</li>
+          <li>Teams that collaborate instead of compete</li>
+        </ul>
+      </div>
+
+      <div class="prog-card fade-up">
+        <div class="prog-tag">Custom Solutions</div>
+        <h2>Custom Leadership &amp; Employee Development Programs</h2>
+        <p class="prog-tagline">Tailored Solutions. Organization-Wide Impact.</p>
+        <p>Every organization is unique — your training should be too. We design and deliver custom programs aligned to your goals, culture, and challenges.</p>
+        <div class="prog-cols">
+          <div>
+            <div class="prog-section-lbl">Options include</div>
+            <ul class="prog-list">
+              <li>Leadership development tracks</li>
+              <li>Culture transformation initiatives</li>
+              <li>Organization-wide training rollouts</li>
+              <li>Workshops, retreats, and multi-session programs</li>
+            </ul>
+          </div>
+          <div>
+            <div class="prog-section-lbl">Outcomes</div>
+            <ul class="prog-list">
+              <li>Scalable, aligned learning experiences</li>
+              <li>Measurable impact across teams and departments</li>
+              <li>Leadership pipelines that sustain long-term growth</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prog-cta fade-up">
+      <div class="prog-cta-inner">
+        <div class="sec-lbl" style="justify-content:center;color:var(--gold-lt)">Let's Get Started</div>
+        <h2>Ready to Bring This to<br>Your Organization?</h2>
+        <div class="divider" style="margin:1.5rem auto 2rem"></div>
+        <p>Let's connect to explore the right training experience for your team and align on your organization's goals.</p>
+        <div class="prog-cta-btns">
+          <a href="https://calendly.com/rudybaileyjr/15-minute-clarity-call" target="_blank" class="btn-gold">Book a FREE 15-Minute Clarity Call</a>
+          <p class="prog-cta-email">Prefer email? Reach out directly at <a href="mailto:rudy@thrive2dayleadership.com">rudy@thrive2dayleadership.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══ SIX PILLARS ══ -->
 <section id="framework">
@@ -532,12 +661,6 @@ footer a{color:var(--gold);text-decoration:none}
           <div class="book-feat"><div class="feat-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><div class="feat-txt">A complete 60-Day Reset Challenge to permanently transform how you lead</div></div>
           <div class="book-feat"><div class="feat-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><div class="feat-txt">Available for bulk purchase — leadership teams, onboarding &amp; book clubs</div></div>
         </div>
-        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.8rem">Be first to know when it launches — get exclusive early access and bonuses.</p>
-        <div class="notify-row">
-          <input type="email" placeholder="Your email address">
-          <button type="button" onclick="this.textContent='✓ You\'re on the list!';this.style.background='var(--forest-mid)'">Notify Me</button>
-        </div>
-        <p class="notify-note">📖 No spam, ever. Just your launch notification.</p>
         <a href="https://stan.store/THRIVE2DAY/p/the-60minute-leader-free-chapter-download" target="_blank" class="prev-link">📄 Download the Free Preview Chapter →</a>
       </div>
     </div>
